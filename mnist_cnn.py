@@ -19,9 +19,18 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
 from keras.utils import np_utils
 
+import sys
+
+nb_epoch = 60
+if len(sys.argv) == 2:
+	try:
+		nb_epoch = int(sys.argv[1])
+	except Exception:
+		pass
+
 batch_size = 128
 nb_classes = 10
-nb_epoch = 60
+
 
 # input image dimensions
 img_rows, img_cols = 28, 28
